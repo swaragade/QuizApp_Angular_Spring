@@ -10,7 +10,7 @@ public class QuestionModel {
 	private List<String> options = new ArrayList<>();
 	private List<String> answers= new ArrayList<>();
 	private String category;
-	private int level;
+	private String level;
 	public String getQid() {
 		return qid;
 	}
@@ -41,10 +41,10 @@ public class QuestionModel {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public int getLevel() {
+	public String getLevel() {
 		return level;
 	}
-	public void setLevel(int level) {
+	public void setLevel(String level) {
 		this.level = level;
 	}
 	@Override

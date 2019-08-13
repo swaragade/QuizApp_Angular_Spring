@@ -11,7 +11,7 @@ public class Question {
 	private String options;
 	private String answers;
 	private String category;
-	private int level;
+	private String level;
 	public int getqID() {
 		return qID;
 	}
@@ -42,10 +42,10 @@ public class Question {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public int getLevel() {
+	public String getLevel() {
 		return level;
 	}
-	public void setLevel(int level) {
+	public void setLevel(String level) {
 		this.level = level;
 	}
 }

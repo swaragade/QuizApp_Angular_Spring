@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<div class="row">
+  <div class="col s8 offset-s2">
+    <h2 class="header">Completed!</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="../../assets/img/trophy.png" style="width: 250px;height : 250px;">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <h4>{{quizService.getParticipantName()}}</h4>
+          <h3>{{quizService.correctAnswerCount}}/{{quizService.qnTotal}}</h3>
+          <span>Time Elapsed : {{quizService.displayTimeElapsed()}}</span>
+        </div>
+      </div>
+      <a class="btn-floating halfway-fab waves-effect waves-light red" (click)="restart()">
+        <i class="material-icons">replay</i>
+      </a>
+    </div>
+  </div>
+</div>

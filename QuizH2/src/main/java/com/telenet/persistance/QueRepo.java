@@ -10,7 +10,7 @@ import com.telenet.entity.Question;
 public interface QueRepo extends JpaRepository<Question, Integer>{
 
 	@Query("from Question where category=?1 and level=?2")
-	public List<Question> findByType(String category, int level);
+	public List<Question> findByType(String category, String level);
 	
 	public Question findByQID(int qID);
 
