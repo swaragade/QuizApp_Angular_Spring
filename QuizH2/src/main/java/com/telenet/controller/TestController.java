@@ -14,12 +14,17 @@ import com.telenet.entity.Question;
 import com.telenet.model.QuestionModel;
 import com.telenet.persistance.QueRepo;
 
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class TestController {
 
 	@Autowired
 	public QueRepo dao;
+	
+	@GetMapping(path = "/", produces = { "application/json" })
+	public String get() {
+		return "APP WORKING";
+	}
 
 	@GetMapping(path = "/getCategoryList", produces = { "application/json" })
 	public List<String> getCategory() {
