@@ -21,9 +21,24 @@ public class TestController {
 	@Autowired
 	public QueRepo dao;
 	
-	@GetMapping(path = "/", produces = { "application/json" })
+	@GetMapping(path = "/test", produces = { "application/json" })
 	public String get() {
 		return "APP WORKING";
+	}
+	
+	@GetMapping(path = "/prop", produces = { "application/json" })
+	public List<String> get2() {
+		List<String> stringList = new ArrayList<String>();
+		try (InputStream input = new FileInputStream("example.properties")) {
+            	Properties prop = new Properties();
+            	// load a properties file
+            	prop.load(input);
+	 	prop.keySet().forEach(x -> stringList.add(x));
+		
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+		return stringList;
 	}
 
 	@GetMapping(path = "/getCategoryList", produces = { "application/json" })
